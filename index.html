@@ -1,0 +1,1178 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ozodbek Komilov - Cyber Security & Web Development CV">
+    <title>Ozodbek Komilov | CV</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #050505;
+            --card: #0d0d0d;
+            --card2: #111111;
+            --text: #f5f5f5;
+            --muted: #929292;
+            --accent: #00ff88;
+            --accent2: #00cfff;
+            --border: rgba(0, 255, 136, 0.18);
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* BACKGROUND */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: var(--accent);
+            opacity: 0.04;
+            filter: blur(150px);
+            border-radius: 50%;
+            top: -200px;
+            left: -200px;
+            pointer-events: none;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: var(--accent2);
+            opacity: 0.035;
+            filter: blur(150px);
+            border-radius: 50%;
+            bottom: -200px;
+            right: -200px;
+            pointer-events: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.75);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-inner {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #aaa;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .menu {
+            display: none;
+            font-size: 25px;
+            cursor: pointer;
+            color: var(--accent);
+        }
+
+        /* HERO */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 70px;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .terminal {
+            color: var(--accent);
+            font-family: monospace;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 80px);
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+            text-shadow: 0 0 20px rgba(0,255,136,0.25);
+        }
+
+        .hero h2 {
+            color: #aaa;
+            font-size: clamp(18px, 3vw, 27px);
+            font-weight: normal;
+            margin-bottom: 20px;
+        }
+
+        .typing {
+            color: var(--accent2);
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: var(--muted);
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 6px;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: #000;
+            box-shadow: 0 0 25px rgba(0,255,136,0.25);
+        }
+
+        .btn.secondary {
+            border-color: #444;
+            color: #ddd;
+        }
+
+        .btn.secondary:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            box-shadow: none;
+        }
+
+        /* PROFILE CARD */
+        .profile-card {
+            background: linear-gradient(145deg, #111, #080808);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 0 50px rgba(0,255,136,0.05);
+        }
+
+        .avatar {
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            border: 2px solid var(--accent);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--accent);
+            font-size: 50px;
+            font-weight: bold;
+            box-shadow: 0 0 35px rgba(0,255,136,0.15);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-card h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .profile-card p {
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .profile-info {
+            text-align: left;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+        }
+
+        .profile-info div {
+            display: flex;
+            justify-content: space-between;
+            padding: 7px 0;
+            font-size: 14px;
+        }
+
+        .profile-info span:first-child {
+            color: #666;
+        }
+
+        .profile-info span:last-child {
+            color: #ddd;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--accent);
+            font-family: monospace;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-top: 5px;
+        }
+
+        .section-title p {
+            color: var(--muted);
+            margin-top: 8px;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid #1d1d1d;
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--border);
+        }
+
+        .card h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--muted);
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background: var(--card);
+            padding: 20px;
+            border: 1px solid #1d1d1d;
+            border-radius: 10px;
+        }
+
+        .skill-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .skill-top span:last-child {
+            color: var(--accent);
+        }
+
+        .bar {
+            width: 100%;
+            height: 7px;
+            background: #222;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            width: 0;
+            background: var(--accent);
+            box-shadow: 0 0 10px rgba(0,255,136,0.4);
+            transition: width 1.5s ease;
+        }
+
+        /* EDUCATION */
+        .timeline {
+            border-left: 2px solid #222;
+            padding-left: 30px;
+        }
+
+        .timeline-item {
+            position: relative;
+            background: var(--card);
+            border: 1px solid #1d1d1d;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            left: -37px;
+            top: 30px;
+            box-shadow: 0 0 12px var(--accent);
+        }
+
+        .timeline-item .date {
+            color: var(--accent);
+            font-family: monospace;
+            font-size: 14px;
+        }
+
+        .timeline-item h3 {
+            margin: 5px 0;
+        }
+
+        .timeline-item p {
+            color: var(--muted);
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #1d1d1d;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .project-number {
+            color: var(--accent);
+            font-family: monospace;
+        }
+
+        .project h3 {
+            margin: 10px 0;
+            font-size: 23px;
+        }
+
+        .project p {
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background: #161616;
+            border: 1px solid #292929;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #bbb;
+            font-size: 12px;
+        }
+
+        /* LANGUAGES */
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .language {
+            text-align: center;
+            padding: 30px;
+            background: var(--card);
+            border: 1px solid #1d1d1d;
+            border-radius: 10px;
+        }
+
+        .language h3 {
+            margin-bottom: 5px;
+        }
+
+        .language p {
+            color: var(--accent);
+        }
+
+        /* CONTACT */
+        .contact-box {
+            text-align: center;
+            background: linear-gradient(145deg, #0d0d0d, #080808);
+            border: 1px solid var(--border);
+            padding: 60px 20px;
+            border-radius: 15px;
+        }
+
+        .contact-box h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+            margin-bottom: 25px;
+        }
+
+        .contacts {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* FOOTER */
+        footer {
+            border-top: 1px solid #1a1a1a;
+            padding: 30px 0;
+            text-align: center;
+            color: #555;
+            font-size: 14px;
+        }
+
+        footer span {
+            color: var(--accent);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 800px) {
+
+            .menu {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: #080808;
+                flex-direction: column;
+                align-items: center;
+                padding: 25px;
+                display: none;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .about-grid,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .languages {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .profile-card {
+                padding: 20px;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="container nav-inner">
+
+            <div class="logo">&lt;OZODBEK/&gt;</div>
+
+            <div class="menu" id="menu">
+                ☰
+            </div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home">
+        <div class="container hero">
+
+            <div>
+                <div class="terminal">&gt; system.init()</div>
+
+                <h1>
+                    Hi, I'm <span>Ozodbek</span>
+                </h1>
+
+                <h2>
+                    Future <span class="typing" id="typing"></span>
+                </h2>
+
+                <p>
+                    I'm a student and aspiring technology specialist
+                    interested in Cyber Security, Web Development and
+                    modern technologies. I enjoy learning new skills,
+                    building projects and solving technical problems.
+                </p>
+
+                <div class="buttons">
+                    <a href="#contact" class="btn">Contact Me</a>
+                    <a href="#projects" class="btn secondary">View Projects</a>
+                </div>
+            </div>
+
+            <div class="profile-card">
+
+                <div class="avatar">
+    <img src="cvvv.png" alt="Ozodbek Komilov">
+</div>
+
+                <h3>Ozodbek Komilov</h3>
+                <p>Student / Future Cyber Security Specialist</p>
+
+                <div class="profile-info">
+                    <div>
+                        <span>Location</span>
+                        <span>Uzbekistan</span>
+                    </div>
+
+                    <div>
+                        <span>Education</span>
+                        <span>Bright Education School</span>
+                    </div>
+
+                    <div>
+                        <span>English</span>
+                        <span>B2 / IELTS 6.5</span>
+                    </div>
+
+                    <div>
+                        <span>Focus</span>
+                        <span>Cyber Security</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>01 // about</span>
+                <h2>About Me</h2>
+                <p>A little information about me</p>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="card">
+                    <h3>Who am I?</h3>
+
+                    <p>
+                        My name is Ozodbek Komilov. I am a student from
+                        Uzbekistan with a strong interest in technology,
+                        programming and Cyber Security.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>My Goal</h3>
+
+                    <p>
+                        My main goal is to develop strong technical skills
+                        and become a professional Cyber Security specialist.
+                        I am especially interested in ethical hacking,
+                        networking and secure systems.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Interests</h3>
+
+                    <p>
+                        Cyber Security, Web Development, Programming,
+                        Networking, Football, Esports and Technology.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Currently Learning</h3>
+
+                    <p>
+                        HTML, CSS, JavaScript, Python, Linux, Networking,
+                        Nmap and the fundamentals of Ethical Hacking.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>02 // skills</span>
+                <h2>Technical Skills</h2>
+                <p>Technologies and tools I work with</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>HTML</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="progress" data-width="80%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>CSS</span>
+                        <span>75%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="progress" data-width="75%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>JavaScript</span>
+                        <span>60%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="progress" data-width="60%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>Python</span>
+                        <span>65%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="progress" data-width="65%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>Linux</span>
+                        <span>55%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="progress" data-width="55%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>Cyber Security</span>
+                        <span>50%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="progress" data-width="50%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>MS Office / Excel</span>
+                        <span>80%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="progress" data-width="80%"></div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill-top">
+                        <span>Photoshop</span>
+                        <span>65%</span>
+                    </div>
+
+                    <div class="bar">
+                        <div class="progress" data-width="65%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>03 // education</span>
+                <h2>Education</h2>
+                <p>My academic background</p>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="date">2016 — 2026</div>
+
+                    <h3>Bright Education School NTM</h3>
+
+                    <p>
+                        General education with additional focus on
+                        English language, computer science and
+                        technology-related subjects.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="date">CURRENTLY</div>
+
+                    <h3>Self-Learning & Technical Development</h3>
+
+                    <p>
+                        Studying Web Development, Python, Linux,
+                        Networking and Ethical Hacking fundamentals
+                        through practical projects and labs.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>04 // projects</span>
+                <h2>Projects & Practice</h2>
+                <p>Things I have worked on or currently learning</p>
+            </div>
+
+            <div class="projects">
+
+                <div class="project">
+                    <div class="project-number">PROJECT_01</div>
+
+                    <h3>Cyber Security Lab</h3>
+
+                    <p>
+                        Practical Linux and networking exercises focused
+                        on understanding ports, services, scanning and
+                        basic security concepts.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Linux</span>
+                        <span class="tag">Nmap</span>
+                        <span class="tag">Networking</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-number">PROJECT_02</div>
+
+                    <h3>Developer Portfolio</h3>
+
+                    <p>
+                        Modern responsive websites created using HTML,
+                        CSS and JavaScript with interactive UI elements
+                        and modern design.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-number">PROJECT_03</div>
+
+                    <h3>Python Projects</h3>
+
+                    <p>
+                        Small Python projects created to improve
+                        programming logic, automation skills and
+                        problem-solving abilities.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-number">PROJECT_04</div>
+
+                    <h3>Telegram Web App Concept</h3>
+
+                    <p>
+                        A concept for a Telegram-based digital marketplace
+                        where users can sell and purchase web-development
+                        files and projects.
+                    </p>
+
+                    <div class="tags">
+                        <span class="tag">Telegram</span>
+                        <span class="tag">Web</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LANGUAGES -->
+    <section>
+
+        <div class="container">
+
+            <div class="section-title">
+                <span>05 // languages</span>
+                <h2>Languages</h2>
+                <p>Languages I communicate in</p>
+            </div>
+
+            <div class="languages">
+
+                <div class="language">
+                    <h3>Uzbek</h3>
+                    <p>Native</p>
+                </div>
+
+                <div class="language">
+                    <h3>English</h3>
+                    <p>B2 / IELTS 6.5</p>
+                </div>
+
+                <div class="language">
+                    <h3>Russian</h3>
+                    <p>Communication</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>Let's Connect</h2>
+
+                <p>
+                    Interested in technology, Cyber Security or
+                    collaboration? Feel free to contact me.
+                </p>
+
+                <div class="contacts">
+
+                    <!-- CHANGE THESE LINKS -->
+                    <a href="https://github.com/nousway21" target="_blank" class="btn">
+                        GitHub
+                    </a>
+
+                    <a href="https://t.me/noussway" target="_blank" class="btn">
+                        Telegram
+                    </a>
+
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=okomilov471@gmail.com"
+   target="_blank"
+   class="btn">
+    Email
+</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            © 2026 <span>Ozodbek Komilov</span> — Built with HTML, CSS & JavaScript
+        </div>
+    </footer>
+
+
+    <script>
+
+        /* TYPING EFFECT */
+
+        const typingText = document.getElementById("typing");
+
+        const words = [
+            "Cyber Security Specialist",
+            "Ethical Hacker",
+            "Web Developer",
+            "Future Coder"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function typeEffect() {
+
+            const currentWord = words[wordIndex];
+
+            if (!deleting) {
+
+                typingText.textContent =
+                    currentWord.substring(0, charIndex + 1);
+
+                charIndex++;
+
+                if (charIndex === currentWord.length) {
+
+                    deleting = true;
+
+                    setTimeout(typeEffect, 1500);
+
+                    return;
+                }
+
+            } else {
+
+                typingText.textContent =
+                    currentWord.substring(0, charIndex - 1);
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex++;
+
+                    if (wordIndex === words.length) {
+                        wordIndex = 0;
+                    }
+                }
+            }
+
+            setTimeout(typeEffect, deleting ? 50 : 90);
+        }
+
+        typeEffect();
+
+
+        /* MOBILE MENU */
+
+        const menu = document.getElementById("menu");
+        const navLinks = document.getElementById("navLinks");
+
+        menu.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+
+        });
+
+
+        /* SKILL BAR ANIMATION */
+
+        const progressBars = document.querySelectorAll(".progress");
+
+        const observer = new IntersectionObserver((entries) => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    const width =
+                        entry.target.getAttribute("data-width");
+
+                    entry.target.style.width = width;
+                }
+
+            });
+
+        }, {
+            threshold: 0.4
+        });
+
+        progressBars.forEach(bar => {
+            observer.observe(bar);
+        });
+
+
+        /* CURRENT YEAR */
+
+        const footer = document.querySelector("footer span");
+
+    </script>
+
+</body>
+</html>
+```
